@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from './style.module.css'
+import styles from './style.module.css';
+import './style.css'
 
 function About() {
   const [text, setText] = useState('');
@@ -11,7 +12,7 @@ function About() {
   },[])
   return (
     <div>
-      <h1>About</h1>
+      <h1 className= "about">About</h1>
       <p className={styles.desc_text}>{ text}</p>
       <Link to ='/home'>Home</Link>
     </div>

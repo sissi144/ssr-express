@@ -6,11 +6,10 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <meta name="referrer" content="origin" />
-  <link rel="shortcut icon" href="https://mat1.gtimg.com/www/icon/favicon2.ico" type="image/x-icon">
- 
+  <link href="<%= PUBLIC_URL + 'static/css/main.css' %>" rel="stylesheet" />
 </head>
-  <body style="background-color: rgb(255, 255, 255);">
+  <body>
     <div id="root"><%- appHtml %></div>
-  
+   <script src="<%= PUBLIC_URL + 'static/js/bundle.js' %>"></script>
   </body>
 </html>

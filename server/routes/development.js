@@ -6,8 +6,12 @@ import { Route, Routes } from 'react-router-dom';
 import { StaticRouter } from "react-router-dom/server";
 import routes from '../../src/routes';
 
+const webpackConfig = require('../../config/webpack.config.ssr.js');
+const config = webpackConfig(process.env.NODE_ENV);;
+
 const router = originalRouter();
 router.get('*', async (req, res) => {
+
   let appHtml = renderToString(
     <StaticRouter location={req.url}>
       <Routes>
@@ -20,6 +24,7 @@ router.get('*', async (req, res) => {
   res.render(tplName, {
     title: '腾讯新闻',
     appHtml: appHtml,
+    PUBLIC_URL: config.output.publicPath,
   });
 });
 
