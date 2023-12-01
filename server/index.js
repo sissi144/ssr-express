@@ -14,14 +14,6 @@ require('@babel/register')({
 const Loadable = require('react-loadable');
 const app = require('./app/development');
 
-const hook = require('css-modules-require-hook');
-const moduleAlias = require('module-alias');
-const path = require('path');
-hook({
-  generateScopedName: '[hash:base64]',
-});
-// 支持服务端渲染
-moduleAlias.addAlias('@', path.resolve(`${__dirname}/../src/`));
 const PROT = 9000;
 // import express server
 Loadable.preloadAll()
